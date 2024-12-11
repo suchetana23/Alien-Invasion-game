@@ -23,6 +23,7 @@ def run_game():
     
     #create the fleet of aliens
     gf.create_fleet(ai_settings, screen, ship, aliens)
+    
     #Set the background color
     bg_color = (153, 51, 102)
     
@@ -30,6 +31,7 @@ def run_game():
     while True:
         gf.check_events(ai_settings, screen, ship, bullets)
         ship.update()
-        gf.update_bullets(bullets)
+        gf.update_bullets(ai_settings, screen, ship, aliens, bullets)
+        gf.update_aliens(ai_settings, ship, aliens)
         gf.update_screen(ai_settings, screen, ship, aliens, bullets)
 run_game()
