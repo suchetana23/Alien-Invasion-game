@@ -7,7 +7,7 @@ class Ship():
         self.ai_settings = ai_settings
         
         # Load the ship image and get its rect.
-        self.image_og = pygame.image.load('alien_invasion/images/ship.bmp')
+        self.image_og = pygame.image.load('./alien_invasion/images/ship.bmp')
         self.image = pygame.transform.scale(self.image_og, (250, 250))
         self.rect = self.image.get_rect()
         self.screen_rect = screen.get_rect()
@@ -38,3 +38,6 @@ class Ship():
         
         import pygame
 
+    def center_ship(self):
+        """Center the ship on the screen."""
+        self.center = self.screen_rect.centerx
